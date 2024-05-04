@@ -1,4 +1,5 @@
 import argparse
+from argparse import RawTextHelpFormatter
 from pathlib import Path
 import PyPDF2
 import logging
@@ -6,10 +7,14 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 parser = argparse.ArgumentParser(
-    description="Stitch odd and reversed even pages of a pdf together"
+    description="Stitch odd and reversed even pages of a pdf together",
+    epilog="""Example:
+    python3 main.py --output output.pdf --odd pages-odd.pdf --even pages-even.pdf
+    """,
+    formatter_class=RawTextHelpFormatter,
 )
 
-parser.add_argument("--output", type=str, help="Output pdf file")
+parser.add_argument("-o", "--output", type=str, help="Output pdf file")
 parser.add_argument(
     "--odd",
     type=str,
