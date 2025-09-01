@@ -9,12 +9,13 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.py]
+# Shell scripts (sh, bash)
+[*.sh]
+indent_style = space
+indent_size = 2
+
+# Nushell scripts
+[*.nu]
 indent_style = space
 indent_size = 4
 
-[**/__pycache__]
-exclude_patterns = *
-
-[**/*.pyc]
-exclude_patterns = *

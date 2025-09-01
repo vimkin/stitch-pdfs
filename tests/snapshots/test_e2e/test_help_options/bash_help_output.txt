@@ -1,0 +1,15 @@
+Stitch odd and reversed even pages of a PDF together using QPDF
+
+Usage: /pdf-tools/scripts/stitch-pdfs.sh --output OUTPUT_FILE --odd ODD_FILE --even EVEN_FILE
+
+Options:
+  --output FILE    Output PDF file
+  --odd FILE       PDF with odd pages (1, 3, 5, ...)
+  --even FILE      PDF with even pages in reverse order (6, 4, 2, ...)
+  --help           Show this help message
+
+Example:
+  /pdf-tools/scripts/stitch-pdfs.sh --output document.pdf --odd pages-odd.pdf --even pages-even.pdf
+
+Requirements:
+  - QPDF (install with: brew install qpdf)
